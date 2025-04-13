@@ -1,20 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Indianapolis Trip Preview</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <script>
     function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
+      const root = document.documentElement;
+      root.classList.toggle("dark");
+
+      // Save preference in localStorage
+      if (root.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
     }
+
+    // Apply saved theme on load
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    });
   </script>
 </head>
 <body class="bg-white text-black dark:bg-black dark:text-white transition-all duration-300">
   <div class="p-6 max-w-4xl mx-auto">
     <button onclick="toggleDarkMode()" class="mb-4 px-4 py-2 bg-gray-800 text-white rounded">Toggle Dark Mode</button>
+
     <h2 class="text-3xl font-bold mb-2">Purpose</h2>
     <p>Explore various medical-related, and educational, attractions in the city of Indianapolis, Indiana.</p>
 
@@ -27,26 +42,39 @@
 
     <h2 class="text-2xl font-semibold mt-8 mb-2">Expenses</h2>
     <ul class="space-y-2">
-      <li>🏨 Lodging: $796 USD</li> <a href="https://www.booking.com/hotel/us/hyatt-house-indianapolis-downtwon.html?aid=356929&label=metagha-link-LUUS-hotel-4569281_dev-desktop_los-1_bw-7_dow-Sunday_defdate-1_room-0_gstadt-2_rateid-public_aud-0_gacid-21415088623_mcid-10_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20250420_ppt-_lp-2840_r-16103626600673454044-Share-kOO01N%401744539143&sid=4b7653bb5d38c155f3986342f298a2fb&all_sr_blocks=456928107_139374453_6_41_0%2C456928107_139374453_6_41_0%2C456928101_139374453_2_41_0%2C456928101_139374453_2_41_0&checkin=2025-05-01&checkout=2025-05-02&dest_id=20037880&dest_type=city&dist=0&group_adults=9&group_children=0&hapos=1&highlighted_blocks=456928107_139374453_6_41_0%2C456928107_139374453_6_41_0%2C456928101_139374453_2_41_0%2C456928101_139374453_2_41_0&hpos=1&matching_block_id=456928107_139374453_6_41_0&no_rooms=5&req_adults=9&req_children=0&room1=A&room2=A%2CA&room3=A%2CA&room4=A%2CA&room5=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=456928107_139374453_6_41_0__19656%2C456928107_139374453_6_41_0__19656%2C456928101_139374453_2_41_0__15912%2C456928101_139374453_2_41_0__15912&srepoch=1744539947&srpvid=577f49527ad5086d&type=total&ucfs=1&" target="_blank" rel="noopener noreferrer">Visit Example</a>
-           <img src="https://images.trvl-media.com/lodging/34000000/33790000/33790000/33789963/06f34e77.jpg?impolicy=resizecrop&rw=1200&ra=fit" class="rounded-lg shadow" alt="Hotel">
+      <li>🏨 Lodging: $796 USD — 
+        <a href="https://www.booking.com/hotel/us/hyatt-house-indianapolis-downtwon.html" target="_blank" class="text-blue-400 underline">Visit Example</a>
+      </li>
+      <img src="https://images.trvl-media.com/lodging/34000000/33790000/33790000/33789963/06f34e77.jpg?impolicy=resizecrop&rw=1200&ra=fit" class="rounded-lg shadow" alt="Hotel" />
       <li>🚐 Transportation: Free (Thea Bowman Van)</li>
       <li>🎟️ Museum Admission: $50 USD</li>
     </ul>
     <p class="text-red-500 mt-2">💸 Remaining: Approx -$46 USD</p>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-2">Attractions to Visit</h2>
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Attractions to Visit</h2>
 
-      <h3 class="text-xl font-semibold">Indiana Medical History Museum</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-      <img src="https://townsquare.media/site/71/files/2024/08/attachment-Untitled-design-2024-08-19T121954.580.jpg?w=780&q=75" alt="String lights at the canal">
-      <h3 class="text-xl font-semibold">White River State Park</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-      <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/207409783/433114843-7c7dc4e2-a4c0-4d82-8b32-fdbcc09a9a21.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250413%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250413T075009Z&X-Amz-Expires=300&X-Amz-Signature=4789f454f9ade28de6fef7af2522ec164020f1180975fa9319f62c33b939b429&X-Amz-SignedHeaders=host" class="rounded-lg shadow" alt="String lights at the canal">
-      <img src="https://github.com/cyphensworld/CNA-Trip-to-INDY/blob/main/rweuky6bu0b61.jpg?raw=true">
-      <img src="images/white-river-trail.jpg" class="rounded-lg shadow" alt="White River Trail">
+    <!-- Attraction 1 -->
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-2">Indiana Medical History Museum</h3>
+      <img src="https://townsquare.media/site/71/files/2024/08/attachment-Untitled-design-2024-08-19T121954.580.jpg?w=780&q=75" alt="Indiana Medical History Museum" class="rounded-lg shadow w-full" />
     </div>
-      <h3 class="text-xl font-semibold mt-6">Soldiers & Sailors Monument</h3>
-     <img src="https://github.com/cyphensworld/CNA-Trip-to-INDY/blob/main/unnamed%20(2).jpg?raw=true" class="rounded-lg shadow mt-2" alt="Soldiers and Sailors Monument">
+
+    <!-- Attraction 2 -->
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-2">White River State Park</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/207409783/433114843-7c7dc4e2-a4c0-4d82-8b32-fdbcc09a9a21.jpeg" class="rounded-lg shadow" alt="Canal with string lights" />
+        <img src="https://github.com/cyphensworld/CNA-Trip-to-INDY/blob/main/rweuky6bu0b61.jpg?raw=true" class="rounded-lg shadow" alt="Canal daytime" />
+        <img src="images/white-river-trail.jpg" class="rounded-lg shadow" alt="White River Trail" />
+      </div>
+    </div>
+
+    <!-- Attraction 3 -->
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-2">Soldiers & Sailors Monument</h3>
+      <img src="https://github.com/cyphensworld/CNA-Trip-to-INDY/blob/main/unnamed%20(2).jpg?raw=true" class="rounded-lg shadow" alt="Soldiers and Sailors Monument" />
+    </div>
+
   </div>
 </body>
 </html>

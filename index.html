@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indianapolis Trip Preview</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</head>
+<body class="bg-white text-black dark:bg-black dark:text-white transition-all duration-300">
+  <div class="p-6 max-w-4xl mx-auto">
+    <button onclick="toggleDarkMode()" class="mb-4 px-4 py-2 bg-gray-800 text-white rounded">Toggle Dark Mode</button>
+    <h2 class="text-3xl font-bold mb-2">Purpose</h2>
+    <p>Explore various medical-related, and educational, attractions in the city of Indianapolis, Indiana.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">Expected Cost Per Person</h2>
+    <p class="text-lg">💵 <strong>$100 USD per person</strong></p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">Logistics</h2>
+    <p>Two People to a Room (8 Students, 1 Supervisor)</p>
+    <p class="text-lg mt-2">📊 <strong>$800 Budget</strong></p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">Expenses</h2>
+    <ul class="space-y-2">
+      <li>🏨 Lodging: $781 USD</li>
+      <li>🚐 Transportation: Free (Thea Bowman Van)</li>
+      <li>🎟️ Museum Admission: $50 USD</li>
+    </ul>
+    <p class="text-red-500 mt-2">💸 Remaining: Approx -$31 USD</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">Attractions</h2>
+
+    <h3 class="text-xl font-semibold">White River State Park</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+      <img src="images/20210313_185808-01.jpeg" class="rounded-lg shadow" alt="String lights at the canal">
+      <img src="images/Indiana-State-Museum-from-Canal.jpg" class="rounded-lg shadow" alt="Canal daytime">
+      <img src="images/white-river-trail.jpg" class="rounded-lg shadow" alt="White River Trail">
+    </div>
+
+    <h3 class="text-xl font-semibold mt-6">Soldiers & Sailors Monument</h3>
+    <img src="images/soldiers-monument.jpg" class="rounded-lg shadow mt-2" alt="Soldiers and Sailors Monument">
+  </div>
+</body>
+</html>
